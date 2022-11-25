@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+    <style>
+      .main {
+        border: 2px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">Not renderd</div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const csss = { color: "red", fontSize: "20px" };
+      const s = "ssg";
+      const NavBar = (
+        <div style={csss}>
+          <p>Home</p>
+          <p>About</p>
+        </div>
+      );
+      const Main = (
+        <div className="main">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis,
+            quas?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+            sapiente praesentium deleniti eligendi?
+          </p>
+        </div>
+      );
+      const Footer = (
+        <div>
+          <p>Copyright @2022 {s} </p>
+        </div>
+      );
+      const App = (
+        <div>
+          {NavBar}
+          {NavBar}
+          {Main}
+          {Main}
+          {Footer}
+        </div>
+      );
+      ReactDOM.render(App, document.getElementById("root"));
+    </script>
+  </body>
+</html>
